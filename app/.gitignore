@@ -1,3 +1,4 @@
-app/vendor
 
-app/.idea
+/vendor
+
+.idea
