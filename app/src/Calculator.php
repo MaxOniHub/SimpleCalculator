@@ -6,7 +6,6 @@ use app\abstractions\AbstractBaseCalculator;
 use app\abstractions\AbstractEngineeringCalculator;
 use app\abstractions\AbstractSimpleCalculator;
 use app\exceptions\WrongOperatorException;
-use app\helpers\CalculatorParametersValidator;
 use app\interfaces\IResult;
 
 /**
@@ -29,18 +28,13 @@ class Calculator
     /** @var AbstractBaseCalculator $Calculator */
     private $Calculator;
 
-    /** @var CalculatorParametersValidator  */
-    private $Validator;
-
     /**
      * Calculator constructor.
      * @param CalculatorManager $calculatorManager
-     * @param CalculatorParametersValidator $validator
      */
-    public function __construct(CalculatorManager $calculatorManager, CalculatorParametersValidator $validator)
+    public function __construct(CalculatorManager $calculatorManager)
     {
         $this->CalculatorManager = $calculatorManager;
-        $this->Validator = $validator;
     }
 
     public function setOperand1($operand1)
